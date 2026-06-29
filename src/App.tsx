@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
-import CalculadoraConversiones from './components/CalculadoraConversiones';
+import CalculadoraPrescripcion from './components/CalculadoraPrescripcion';
 import CalculadoraDensidad from './components/CalculadoraDensidad';
 import CalculadoraHL from './components/CalculadoraHL';
 import CalculadoraCuba from './components/CalculadoraCuba';
@@ -10,11 +10,11 @@ import CalculadoraEnergia from './components/CalculadoraEnergia';
 import CalculadoraConcentracion from './components/CalculadoraConcentracion';
 
 const TABS_PRINCIPALES = [
-  { id: 0, label: 'Conversión', emoji: '⇄', component: <CalculadoraConversiones />, desc: 'Unidades básicas' },
-  { id: 2, label: 'Dosis/hL',  emoji: '🧪', component: <CalculadoraHL />,            desc: 'hL → ha' },
-  { id: 3, label: 'Por Cuba',  emoji: '🪣', component: <CalculadoraCuba />,           desc: 'Producto por llenado' },
-  { id: 4, label: 'Superficie',emoji: '🌾', component: <CalculadoraSuperficie />,     desc: 'Total explotación' },
-  { id: 5, label: 'Trampas',   emoji: '🪤', component: <CalculadoraTrampas />,        desc: 'Difusores · Feromonas' },
+  { id: 0, label: 'Prescripción', emoji: '📋', component: <CalculadoraPrescripcion />, desc: 'Dosis completa · Cuba · Plan parcela' },
+  { id: 2, label: 'Dosis/hL',    emoji: '🧪', component: <CalculadoraHL />,            desc: 'hL → ha' },
+  { id: 3, label: 'Por Cuba',    emoji: '🪣', component: <CalculadoraCuba />,           desc: 'Producto por llenado' },
+  { id: 4, label: 'Superficie',  emoji: '🌾', component: <CalculadoraSuperficie />,     desc: 'Total explotación' },
+  { id: 5, label: 'Trampas',     emoji: '🪤', component: <CalculadoraTrampas />,        desc: 'Difusores · Feromonas' },
 ];
 
 const TABS_SECUNDARIAS = [
