@@ -150,7 +150,12 @@ export default function App() {
             </div>
             <p className="text-sm text-gray-500 mt-0.5">{tab.desc}</p>
           </div>
-          {tab.component}
+          {/* Todos los componentes siempre montados — estado preservado al cambiar pestaña */}
+          {TODOS_TABS.map(t => (
+            <div key={t.id} className={tabActiva === t.id ? '' : 'hidden'}>
+              {t.component}
+            </div>
+          ))}
         </div>
       </main>
 
