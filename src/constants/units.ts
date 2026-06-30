@@ -106,23 +106,56 @@ export const POOL_DOSIS_HA: UnitDef[] = [
   { id: 't/ha', label: 't/ha', group: 'dosis_ha' },
 ];
 
-// Pool: dosis por hectólitro (y equivalentes)
+// Pool: dosis por hectólitro (y equivalentes) + porcentaje
 export const POOL_DOSIS_HL: UnitDef[] = [
-  { id: 'L/hL', label: 'L/hL', group: 'dosis_hl' },
-  { id: 'mL/hL', label: 'mL/hL', group: 'dosis_hl' },
-  { id: 'cc/hL', label: 'cc/hL', group: 'dosis_hl' },
-  { id: 'kg/hL', label: 'kg/hL', group: 'dosis_hl' },
-  { id: 'g/hL', label: 'g/hL', group: 'dosis_hl' },
-  { id: 'L/100L', label: 'L/100L', group: 'dosis_hl' },
+  { id: 'L/hL',    label: 'L/hL',    group: 'dosis_hl' },
+  { id: 'mL/hL',   label: 'mL/hL',   group: 'dosis_hl' },
+  { id: 'cc/hL',   label: 'cc/hL',   group: 'dosis_hl' },
+  { id: 'kg/hL',   label: 'kg/hL',   group: 'dosis_hl' },
+  { id: 'g/hL',    label: 'g/hL',    group: 'dosis_hl' },
+  { id: 'L/100L',  label: 'L/100L',  group: 'dosis_hl' },
   { id: 'mL/100L', label: 'mL/100L', group: 'dosis_hl' },
   { id: 'cc/100L', label: 'cc/100L', group: 'dosis_hl' },
   { id: 'kg/100L', label: 'kg/100L', group: 'dosis_hl' },
-  { id: 'g/100L', label: 'g/100L', group: 'dosis_hl' },
+  { id: 'g/100L',  label: 'g/100L',  group: 'dosis_hl' },
   { id: 'L/1000L', label: 'L/1000L', group: 'dosis_hl' },
-  { id: 'mL/1000L', label: 'mL/1000L', group: 'dosis_hl' },
-  { id: 'cc/1000L', label: 'cc/1000L', group: 'dosis_hl' },
-  { id: 'kg/1000L', label: 'kg/1000L', group: 'dosis_hl' },
+  { id: 'mL/1000L',label: 'mL/1000L',group: 'dosis_hl' },
+  { id: 'cc/1000L',label: 'cc/1000L',group: 'dosis_hl' },
+  { id: 'kg/1000L',label: 'kg/1000L',group: 'dosis_hl' },
   { id: 'g/1000L', label: 'g/1000L', group: 'dosis_hl' },
+];
+
+// Pool: concentración porcentual (% v/v) — equivale a L/hL en la mezcla
+export const POOL_DOSIS_PCT: UnitDef[] = [
+  { id: '%', label: '% (v/v)', group: 'otras' },
+];
+
+// Pool: dosis por metro cuadrado — tratamientos suelo e invernadero
+export const POOL_DOSIS_M2: UnitDef[] = [
+  { id: 'kg/m2', label: 'kg/m²', group: 'otras' },
+  { id: 'g/m2',  label: 'g/m²',  group: 'otras' },
+  { id: 'L/m2',  label: 'L/m²',  group: 'otras' },
+  { id: 'mL/m2', label: 'mL/m²', group: 'otras' },
+  { id: 'cc/m2', label: 'cc/m²', group: 'otras' },
+];
+
+// Pool: dosis por metro cúbico — fumigación en cámara o invernadero
+export const POOL_DOSIS_M3: UnitDef[] = [
+  { id: 'kg/m3', label: 'kg/m³', group: 'otras' },
+  { id: 'g/m3',  label: 'g/m³',  group: 'otras' },
+  { id: 'L/m3',  label: 'L/m³',  group: 'otras' },
+  { id: 'mL/m3', label: 'mL/m³', group: 'otras' },
+  { id: 'cc/m3', label: 'cc/m³', group: 'otras' },
+  { id: 't/m3',  label: 't/m³',  group: 'otras' },
+];
+
+// Pool: dosis por kg de material tratado — semillas y sólidos
+export const POOL_DOSIS_PORKG: UnitDef[] = [
+  { id: 'mL/kg', label: 'mL/kg', group: 'otras' },
+  { id: 'cc/kg', label: 'cc/kg', group: 'otras' },
+  { id: 'L/kg',  label: 'L/kg',  group: 'otras' },
+  { id: 'kg/kg', label: 'kg/kg', group: 'otras' },
+  { id: 'g/kg',  label: 'g/kg',  group: 'otras' },
 ];
 
 // Pool: unidades biológicas y feromonas
