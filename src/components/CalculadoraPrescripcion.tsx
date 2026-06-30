@@ -47,15 +47,9 @@ function roundToMeasurable(valor: number, unidad: string): string {
   return `${fmt1(r)} ${unidad}`;
 }
 
-// Redondea AL ALZA al siguiente formato comercial habitual
-const SIZES_L  = [0.05, 0.1, 0.15, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 5, 10, 20, 25, 50, 100, 200];
-const SIZES_KG = [0.05, 0.1, 0.25, 0.5, 1, 2, 5, 10, 25, 50, 100, 500];
-
-function roundUpForPurchase(valor: number, unidad: string): string {
-  const sizes = unidad === 'L' ? SIZES_L : SIZES_KG;
-  const size  = sizes.find(s => s >= valor) ?? Math.ceil(valor / 5) * 5;
-  const sizeNum = typeof size === 'number' ? size : size;
-  return `${sizeNum.toLocaleString('es-ES')} ${unidad}`;
+// Redondea al alza al entero siguiente (para compra)
+function compraTexto(valor: number, unidad: string): string {
+  return `${Math.ceil(valor).toLocaleString('es-ES')} ${unidad}`;
 }
 
 // ─── Componentes internos ─────────────────────────────────────────────────────
@@ -469,7 +463,7 @@ export default function CalculadoraPrescripcion() {
                   valor={fmt1(resultado.totalProductoValor)}
                   unidad={resultado.totalProductoUnidad}
                   color="green"
-                  nota={`Compra: ${roundUpForPurchase(resultado.totalProductoValor, resultado.totalProductoUnidad)}`}
+                  nota={`Compra: ${compraTexto(resultado.totalProductoValor, resultado.totalProductoUnidad)}`}
                 />
               </div>
             ) : (
@@ -479,7 +473,7 @@ export default function CalculadoraPrescripcion() {
                   valor={fmt1(resultado.totalProductoValor)}
                   unidad={resultado.totalProductoUnidad}
                   color="green"
-                  nota={`Compra: ${roundUpForPurchase(resultado.totalProductoValor, resultado.totalProductoUnidad)}`}
+                  nota={`Compra: ${compraTexto(resultado.totalProductoValor, resultado.totalProductoUnidad)}`}
                 />
                 {esSpray && !resultado.caldoUsado && (
                   <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-800 text-center">
